@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Color Tester</title>
+  <link rel="stylesheet" href="./style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+</head>
+
+<body>
+  <div id="app">
+
+    <!-- Landing View -->
+    <section id="landing-view" class="landing-container">
+      <div class="landing-content">
+        <div class="landing-header">
+          <h1>Color Tester</h1>
+          <p>Define your palette and visualize it instantly.</p>
+        </div>
+
+        <div class="landing-card">
+          <div class="color-inputs-group">
+            <div class="input-wrapper">
+              <label for="primary">Primary</label>
+              <div class="color-input-container">
+                <input type="color" id="primary" name="primary" value="#646cff">
+                <input type="text" id="primary-text" value="#646cff" maxlength="7">
+              </div>
+            </div>
+
+            <div class="input-wrapper">
+              <label for="secondary">Secondary</label>
+              <div class="color-input-container">
+                <input type="color" id="secondary" name="secondary" value="#535bf2">
+                <input type="text" id="secondary-text" value="#535bf2" maxlength="7">
+              </div>
+            </div>
+
+            <div class="input-wrapper">
+              <label for="tertiary">Tertiary</label>
+              <div class="color-input-container">
+                <input type="color" id="tertiary" name="tertiary" value="#ff6464">
+                <input type="text" id="tertiary-text" value="#ff6464" maxlength="7">
+              </div>
+            </div>
+
+            <div class="input-wrapper">
+              <label for="accent">Accent</label>
+              <div class="color-input-container">
+                <input type="color" id="accent" name="accent" value="#fca311">
+                <input type="text" id="accent-text" value="#fca311" maxlength="7">
+              </div>
+            </div>
+          </div>
+          <!-- Logo Upload -->
+          <div class="logo-upload-section">
+            <label class="logo-label">App Logo</label>
+            <div class="file-input-wrapper">
+              <input type="file" id="logo-upload" accept="image/*">
+              <div class="upload-placeholder">
+                <span class="material-icons-round upload-icon">cloud_upload</span>
+                <span class="upload-text">Upload Logo</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="action-area">
+            <button id="test-btn" class="btn primary-btn big-btn">Test Your Color</button>
+            <div class="landing-footer">
+              <!-- <div class="footer-avatar">T</div> -->
+              <span class="footer-text">Designed by <strong>theshortpant</strong></span>
+              <a href="https://www.instagram.com/theshortpant/" target="_blank" aria-label="Visit us on Instagram">
+                <i class="fa-brands fa-instagram fa-2x"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Dashboard View (Hidden by default) -->
+    <section id="dashboard-view" class="dashboard-container hidden">
+
+      <div class="dashboard-toolbar">
+        <button id="back-btn" class="btn outline-btn"><span class="material-icons-round">arrow_back</span> Clear
+          Canvas</button>
+        <button id="download-btn" class="btn primary-btn"><span class="material-icons-round">download</span> Download
+          Mockup</button>
+      </div>
+
+      <!-- This is the mockup container that will be downloaded -->
+      <div class="mockup-wrapper" id="mockup-canvas">
+        <!-- Sidebar -->
+        <aside class="mockup-sidebar">
+          <div class="mockup-brand">
+            <img id="dashboard-logo" src="/vite.svg" alt="Logo" class="brand-logo">
+            <span class="brand-name primary-text">FitLife</span>
+          </div>
+          <nav class="mockup-nav">
+            <a href="#" class="nav-item active primary-bg">Dashboard</a>
+            <a href="#" class="nav-item">Activity</a>
+            <a href="#" class="nav-item">Workout</a>
+            <a href="#" class="nav-item">Settings</a>
+          </nav>
+          <div class="mockup-sidebar-footer">
+            <div class="user-mini">
+              <div class="avatar accent-bg">RJ</div>
+              <div class="user-info">
+                <span class="name">Ronald Jr.</span>
+                <span class="role">Free Member</span>
+              </div>
+            </div>
+          </div>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="mockup-main">
+
+          <!-- Top Header / Banner Section -->
+          <header class="mockup-header-section">
+            <div class="header-greeting">
+              <h1>Good Morning, Ronald Jr. 👋</h1>
+              <p>Stay active and healthy to start your day.</p>
+            </div>
+            <div class="header-banner primary-gradient-bg">
+              <div class="banner-content">
+                <h3>Worldwide 20km Marathon Competition 2024</h3>
+                <p>Learn more about this event you can visit the following links.</p>
+              </div>
+              <button class="btn sm white-btn">Learn More</button>
+            </div>
+          </header>
+
+          <!-- Scrollable Content -->
+          <div class="mockup-content-scroll">
+
+            <!-- Stats Grid -->
+            <div class="stats-grid">
+              <div class="stat-pill">
+                <div class="stat-icon-circle accent-bg-light accent-text"><span
+                    class="material-icons-round">schedule</span></div>
+                <div class="stat-details">
+                  <span class="stat-val">7.8<small>/hours</small></span>
+                  <span class="stat-lbl">Sleeping Reports</span>
+                </div>
+              </div>
+              <div class="stat-pill">
+                <div class="stat-icon-circle primary-bg-light primary-text"><span
+                    class="material-icons-round">directions_walk</span></div>
+                <div class="stat-details">
+                  <span class="stat-val">8260<small>/step</small></span>
+                  <span class="stat-lbl">Step Counter</span>
+                </div>
+              </div>
+              <div class="stat-pill">
+                <div class="stat-icon-circle secondary-bg-light secondary-text"><span
+                    class="material-icons-round">local_fire_department</span></div>
+                <div class="stat-details">
+                  <span class="stat-val">200<small>/cal</small></span>
+                  <span class="stat-lbl">Calories Burn</span>
+                </div>
+              </div>
+              <div class="stat-pill">
+                <div class="stat-icon-circle tertiary-bg-light tertiary-text"><span
+                    class="material-icons-round">favorite</span></div>
+                <div class="stat-details">
+                  <span class="stat-val">160<small>/bpm</small></span>
+                  <span class="stat-lbl">Heart Rate</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Dashboard Grid Layout -->
+            <div class="dashboard-grid">
+
+              <!-- Left Column -->
+              <div class="grid-col-left">
+                <!-- Subscription Card (Dark) -->
+                <div class="card dark-card">
+                  <div class="card-content">
+                    <div class="icon-badge accent-bg"><span class="material-icons-round">workspace_premium</span></div>
+                    <div class="text-content">
+                      <h3>Upgrade Your Subscription Plan</h3>
+                      <p>Consider upgrading your plan to access all features in your fitness app.</p>
+                    </div>
+                    <button class="btn sm white-btn">Upgrade Now</button>
+                  </div>
+                </div>
+
+                <!-- Popular Courses -->
+                <div class="card transparent-card">
+                  <div class="section-header">
+                    <h4>Popular Courses</h4>
+                    <span class="material-icons-round more-options">more_vert</span>
+                  </div>
+                  <div class="courses-grid">
+                    <div class="course-item">
+                      <div class="course-icon accent-bg-light"><span class="material-icons-round">fitness_center</span>
+                      </div>
+                      <div class="course-info">
+                        <h5>Weight Loss</h5>
+                        <span>1kg <small>/ 20mins</small></span>
+                      </div>
+                    </div>
+                    <div class="course-item">
+                      <div class="course-icon primary-bg-light"><span
+                          class="material-icons-round">accessibility_new</span></div>
+                      <div class="course-info">
+                        <h5>Push Up</h5>
+                        <span>80 <small>/ 45mins</small></span>
+                      </div>
+                    </div>
+                    <div class="course-item">
+                      <div class="course-icon secondary-bg-light"><span
+                          class="material-icons-round">self_improvement</span></div>
+                      <div class="course-info">
+                        <h5>Lower Stretch</h5>
+                        <span>25 <small>/ 20mins</small></span>
+                      </div>
+                    </div>
+                    <div class="course-item">
+                      <div class="course-icon tertiary-bg-light"><span
+                          class="material-icons-round">directions_run</span></div>
+                      <div class="course-info">
+                        <h5>ABS & Stretch</h5>
+                        <span>1kg <small>/ 30mins</small></span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Recommended Activity -->
+                <div class="card transparent-card">
+                  <div class="section-header">
+                    <h4>Recommended Activity</h4>
+                    <span class="material-icons-round more-options">more_vert</span>
+                  </div>
+                  <div class="activity-row">
+                    <div class="activity-card primary-bg-super-light">
+                      <h5>Ultimate Body Workout</h5>
+                      <p>Build your body with proper care.</p>
+                      <button class="btn xs primary-btn">Join Now</button>
+                    </div>
+                    <div class="activity-card secondary-bg-super-light">
+                      <h5>Body Weight Workout</h5>
+                      <p>Build your body with proper care.</p>
+                      <button class="btn xs secondary-btn">Join Now</button>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+
+              <!-- Right Column -->
+              <div class="grid-col-right">
+                <!-- Popular Trainers -->
+                <div class="card">
+                  <div class="section-header">
+                    <h4>Popular Trainers</h4>
+                    <span class="material-icons-round arrow-icon">north_east</span>
+                  </div>
+                  <div class="trainers-list">
+                    <div class="trainer-item">
+                      <div class="avatar-sq primary-bg-light">KJ</div>
+                      <div class="trainer-info">
+                        <h5>Karina James</h5>
+                        <span>Yoga Expert / 3+ years</span>
+                      </div>
+                      <button class="btn xs dark-outline-btn">Book</button>
+                    </div>
+                    <div class="trainer-item">
+                      <div class="avatar-sq secondary-bg-light">JJ</div>
+                      <div class="trainer-info">
+                        <h5>Jacob Jones</h5>
+                        <span>Push Up Expert / 4+ years</span>
+                      </div>
+                      <button class="btn xs dark-outline-btn">Book</button>
+                    </div>
+                    <div class="trainer-item">
+                      <div class="avatar-sq accent-bg-light">JW</div>
+                      <div class="trainer-info">
+                        <h5>Jenny Wilson</h5>
+                        <span>Fitness Expert / 6+ years</span>
+                      </div>
+                      <button class="btn xs dark-outline-btn">Book</button>
+                    </div>
+                    <div class="trainer-item">
+                      <div class="avatar-sq tertiary-bg-light">JJ</div>
+                      <div class="trainer-info">
+                        <h5>Jacob Jones</h5>
+                        <span>Boxer / 2+ years</span>
+                      </div>
+                      <button class="btn xs dark-outline-btn">Book</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </main>
+      </div>
+
+    </section>
+  </div>
+  <script type="module" src="/main.js"></script>
+</body>
+
+</html>
